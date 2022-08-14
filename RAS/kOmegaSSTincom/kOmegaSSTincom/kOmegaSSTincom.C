@@ -586,10 +586,18 @@ void kOmegaSSTincom<BasicTurbulenceModel>::correct()
 //Model1
     nonlinearStress_=2*k_*((0.08815*I2*N3*N3*(N1+2.341))*T1+(-1.945*I2+N1*N3+0.86*N1-1.29)*T2+(N2+N3-0.493)*T3);
     Rij_=2*k_*((-(N3-0.761)*(I1-N2+0.04171))*T1+((I2-1.0)*(0.6162975*I2 + 0.6162975*N1-0.708742125))*T2+(I1*I1*I2*N2*N2*(I1-N2))*T3);
+	
+//SimplifiedModel1
+    //nonlinearStress_=2*k_*0*T1;
+    //Rij_=2*k_*((-(N3-0.761)*(I1-N2+0.04171))*T1);
 
 //Model2
     //nonlinearStress_=2*k_*((-0.089*(I1+1)*(0.43*I2+0.0645))*T1+(I2+2*N3+0.85)*T2 +(I2*(0.15*I1+0.15*N2+0.0645)-1.00141135*N2+0.527)*T3);
     //Rij_=2*k_*(((-N2*(N3-0.28)+N2+N3-0.889175)*T1 +(2*I2+N2+N3-3.241)*T2 +(0.91185*N2*(-I1+0.097*N1+N2))*T3);
+	
+//SimplifiedModel2
+    //nonlinearStress_=2*k_*0*T1;
+    //Rij_=2*k_*(((-N2*(N3-0.28)+N2+N3-0.889175)*T1);
 
     nonlinearStress_.correctBoundaryConditions();
     Rij_.correctBoundaryConditions();
