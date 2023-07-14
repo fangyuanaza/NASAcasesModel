@@ -562,8 +562,8 @@ void kOmegaSSTcom<BasicTurbulenceModel>::correct()
     volSymmTensorField sij(dev(symm(tgradU()))); 
     volTensorField omegaij((skew(tgradU())));
 	
-    volScalarField I1(tau2*(sij && sij));
-    volScalarField I2(tau2*(omegaij && omegaij));
+    volScalarField I1(tau2*tr(sij & sij));
+    volScalarField I2(tau2*tr(omegaij & omegaij));
 	
     volSymmTensorField T1(tau*sij);
     volSymmTensorField T2(tau2*(symm((sij & omegaij) - (omegaij & sij))));
